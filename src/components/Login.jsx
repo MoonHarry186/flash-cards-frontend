@@ -26,6 +26,7 @@ const Login = () => {
             client.createIfNotExists(doc).then(() => {
               navigate("/", { replace: true });
             });
+            login(true)
           }}
           onError={() => {
             console.log("Login Failed");
