@@ -8,12 +8,9 @@ import { GlobalProvider } from "./context/GlobalState";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <GlobalProvider>
-  
-  <React.StrictMode>
-      <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}>
-        <App />
-      </GoogleOAuthProvider>
-  </React.StrictMode>
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}>
+      <App />
+    </GoogleOAuthProvider>
   </GlobalProvider>
 );
 

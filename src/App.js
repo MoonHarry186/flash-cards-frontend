@@ -5,6 +5,7 @@ import './index.css'
 import { GlobalContext } from './context/GlobalState';
 import { useContext } from "react";
 import Course from "./components/Course";
+import AddCourse from "./components/AddCourse";
 
 function App() {
   const {isLogin} = useContext(GlobalContext)
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={true ? <Home /> : <Login />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/add-course" element={<AddCourse />} />
           <Route path="/course/:id" element={<Course />} />
         </Routes>
       </Router>

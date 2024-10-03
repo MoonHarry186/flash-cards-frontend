@@ -1,6 +1,22 @@
 export const cardsQuery = `*[_type == "card"]`;
 export const coursesQuery = `*[_type == "course"]`;
 
+export const coursesQueryById = (courseId) => {
+  return `*[_type == "course"&& _id == '${courseId}' ]{
+    name,
+    description,
+    "cards": cards[]->{
+      term,
+      type,
+      definition,
+      image,
+      example
+    }, 
+    author,
+    dateCreated
+  }`
+}
+
 export const pinDetailQuery = (pinId) => {
   const query = `*[_type == "pin" && _id == '${pinId}']{
       image{
